@@ -123,9 +123,9 @@ fi
 # ---- Step 7: Deploy Application ----
 print_step "7/10 - Deploying application..."
 if [ ! -d "$APP_DIR" ]; then
-  sudo -u $DEPLOY_USER git clone https://github.com/ibrahim303404/erpnext.git "$APP_DIR"
+  sudo -u $DEPLOY_USER git clone -b claude/migrate-website-debian-vps-WqJdQ https://github.com/ibrahim303404/erpnext.git "$APP_DIR"
 else
-  sudo -u $DEPLOY_USER bash -c "cd $APP_DIR && git pull origin main"
+  sudo -u $DEPLOY_USER bash -c "cd $APP_DIR && git pull origin claude/migrate-website-debian-vps-WqJdQ"
 fi
 
 # Backend setup
