@@ -75,13 +75,15 @@ print_step "5/10 - Installing Python..."
 apt install -y python3 python3-pip python3-venv python3-dev
 echo "Python: $(python3 --version)"
 
-# ---- Step 6: Install MongoDB 7.0 ----
-print_step "6/10 - Installing MongoDB 7.0..."
+# ---- Step 6: Install MongoDB 8.0 ----
+print_step "6/10 - Installing MongoDB 8.0..."
 if ! command -v mongod &>/dev/null; then
-  curl -fsSL https://www.mongodb.org/static/pgp/server-7.0.asc | \
-    gpg -o /usr/share/keyrings/mongodb-server-7.0.gpg --dearmor
-  echo "deb [ signed-by=/usr/share/keyrings/mongodb-server-7.0.gpg ] https://repo.mongodb.org/apt/debian bookworm/mongodb-org/7.0 main" | \
-    tee /etc/apt/sources.list.d/mongodb-org-7.0.list
+  curl -fsSL https://www.mongodb.org/static/pgp/server-8.0.asc | \
+    gpg -o /usr/share/keyrings/mongodb-server-8.0.gpg --dearmor
+  echo "deb [ signed-by=/usr/share/keyrings/mongodb-server-8.0.gpg ] https://repo.mongodb.org/apt/debian bookworm/mongodb-org/8.0 main" | \
+    tee /etc/apt/sources.list.d/mongodb-org-8.0.list
+  # Remove old 7.0 list if present
+  rm -f /etc/apt/sources.list.d/mongodb-org-7.0.list
   apt update
   apt install -y mongodb-org
 fi
