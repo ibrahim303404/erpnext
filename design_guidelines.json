@@ -1,0 +1,161 @@
+{
+  "project_name": "ERPNext Arabic Learning Platform",
+  "theme_strategy": "The Performance Pro (Dark Mode Focus)",
+  "emotional_tone": "Professional, Technical, Accessible, High-Contrast",
+  "rtl_strategy": "Mirror Protocol",
+  "colors": {
+    "palette": {
+      "mode": "dark",
+      "background": {
+        "default": "#0A0A0A",
+        "paper": "#121212",
+        "subtle": "#1A1A1A"
+      },
+      "primary": {
+        "main": "#7079F7",
+        "light": "#969CF9",
+        "dark": "#5A61C9",
+        "foreground": "#FFFFFF"
+      },
+      "secondary": {
+        "main": "#262626",
+        "foreground": "#FAFAFA"
+      },
+      "accent": {
+        "cyan": "#06B6D4",
+        "purple": "#8B5CF6",
+        "success": "#10B981",
+        "warning": "#F59E0B",
+        "error": "#EF4444"
+      },
+      "text": {
+        "primary": "#EDEDED",
+        "secondary": "#A1A1AA",
+        "muted": "#52525B"
+      },
+      "border": {
+        "default": "#27272A",
+        "active": "#3F3F46"
+      }
+    },
+    "gradients": {
+      "hero_glow": "radial-gradient(circle at 50% 0%, rgba(112, 121, 247, 0.15) 0%, rgba(10, 10, 10, 0) 70%)",
+      "card_hover": "linear-gradient(180deg, rgba(39, 39, 42, 0) 0%, rgba(112, 121, 247, 0.05) 100%)"
+    }
+  },
+  "typography": {
+    "font_family": {
+      "arabic_heading": "Cairo, sans-serif",
+      "arabic_body": "Tajawal, sans-serif",
+      "english_heading": "Manrope, sans-serif",
+      "english_body": "Inter, sans-serif"
+    },
+    "scale": {
+      "h1": "text-4xl md:text-6xl font-bold tracking-tight",
+      "h2": "text-3xl md:text-4xl font-semibold tracking-tight",
+      "h3": "text-2xl md:text-3xl font-medium",
+      "body_lg": "text-lg leading-relaxed",
+      "body_base": "text-base leading-relaxed",
+      "caption": "text-sm text-muted-foreground"
+    }
+  },
+  "layout_grid": {
+    "container": "container mx-auto px-4 md:px-8",
+    "bento_grid": "grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6",
+    "dashboard_grid": "grid grid-cols-12 gap-4",
+    "course_card_grid": "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
+  },
+  "visual_enhancers": {
+    "glassmorphism": {
+      "default": "bg-black/40 backdrop-blur-xl border border-white/10",
+      "heavy": "bg-black/80 backdrop-blur-2xl border-b border-white/5"
+    },
+    "shadows": {
+      "glow": "0 0 20px -5px rgba(112, 121, 247, 0.3)",
+      "card": "0 1px 2px 0 rgba(0, 0, 0, 0.5)"
+    },
+    "borders": {
+      "subtle": "border border-border/40",
+      "gradient_trace": "relative after:absolute after:inset-0 after:rounded-lg after:p-[1px] after:bg-gradient-to-b after:from-white/10 after:to-transparent"
+    }
+  },
+  "rtl_rules": {
+    "direction": "Use `dir='rtl'` on the root element for Arabic mode.",
+    "mirroring": [
+      "Flip chevrons and directional arrows (left arrow becomes right arrow in RTL).",
+      "Mirror margin/padding: Use `ms-` (margin-start) and `me-` (margin-end) instead of `ml-` and `mr-`.",
+      "Align text: `text-right` is default in RTL, `text-left` for English code snippets.",
+      "Input fields: Text input direction should align with the active language."
+    ],
+    "icons": "Use generic icons that don't need flipping (e.g., search, settings). Flip directional icons like 'ArrowRight' to point left in RTL."
+  },
+  "components": {
+    "Button": {
+      "styles": "rounded-md font-medium transition-all duration-200 active:scale-95",
+      "variants": {
+        "primary": "bg-primary text-white hover:bg-primary/90 shadow-[0_0_15px_-3px_rgba(112,121,247,0.4)]",
+        "secondary": "bg-secondary text-secondary-foreground hover:bg-secondary/80",
+        "outline": "border border-input bg-transparent hover:bg-accent hover:text-accent-foreground",
+        "ghost": "hover:bg-accent hover:text-accent-foreground"
+      }
+    },
+    "Card": {
+      "style": "bg-card text-card-foreground rounded-lg border border-border/50 shadow-sm transition-all hover:border-primary/50 hover:shadow-glow group",
+      "content_padding": "p-6"
+    },
+    "CourseCard": {
+      "image_aspect": "aspect-video",
+      "overlay": "group-hover:opacity-100 opacity-0 transition-opacity bg-black/60 absolute inset-0 flex items-center justify-center",
+      "badge": "absolute top-3 right-3 bg-black/70 backdrop-blur-md text-xs px-2 py-1 rounded border border-white/10"
+    },
+    "VideoPlayer": {
+      "container": "relative aspect-video bg-black rounded-xl overflow-hidden border border-white/10 shadow-2xl",
+      "controls": "absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-4"
+    },
+    "ProgressBar": {
+      "track": "bg-secondary h-2 rounded-full overflow-hidden",
+      "indicator": "bg-primary h-full transition-all duration-500 ease-out"
+    }
+  },
+  "image_assets": {
+    "hero_backgrounds": [
+      "https://images.unsplash.com/photo-1771887536502-71eb6dc95389?crop=entropy&cs=srgb&fm=jpg&q=85",
+      "https://images.unsplash.com/photo-1760278041881-e64e501d009c?crop=entropy&cs=srgb&fm=jpg&q=85"
+    ],
+    "course_thumbnails": [
+      "https://images.unsplash.com/photo-1611078489935-0cb964de46d6?crop=entropy&cs=srgb&fm=jpg&q=85",
+      "https://images.unsplash.com/photo-1770219733996-85ce5b943a18?crop=entropy&cs=srgb&fm=jpg&q=85"
+    ],
+    "placeholders": {
+      "user": "https://api.dicebear.com/7.x/avataaars/svg?seed=Felix",
+      "logo": "https://placehold.co/400x100/000000/FFFFFF/png?text=ERPNext+Arabic"
+    }
+  },
+  "instructions_to_main_agent": [
+    "1. SYSTEM SETUP: Ensure `tailwind.config.js` includes the custom colors (primary: #7079F7).",
+    "2. RTL CONFIG: Create a `LanguageContext` or similar to toggle `dir='rtl'` on the `<html>` or `<body>` tag. Default to RTL for Arabic.",
+    "3. FONTS: Import 'Cairo' and 'Manrope' from Google Fonts. Apply 'font-cairo' to body when language is Arabic.",
+    "4. COMPONENTS: Use Shadcn/UI components but override default radius to 'rounded-md' or 'rounded-lg'. Do not use 'rounded-xl' unless it's a large container.",
+    "5. DARK MODE: Force dark mode by default. Add 'dark' class to html/body. Do not rely on system preference initially.",
+    "6. ICONS: Use `lucide-react`. Ensure icons are flipped in RTL where necessary (e.g., `ArrowRight` becomes `ArrowLeft`).",
+    "7. LAYOUT: For the Course Viewer, use a 'Cinema' layout: Darkest background, video takes focus, sidebar for curriculum is collapsible.",
+    "8. NO AUTH: Use `localStorage` to persist 'completed_lessons' and 'quiz_results'. Key it by course ID.",
+    "9. ADMIN: Create a simple 'secret code' input for Admin access. Do not build full auth.",
+    "10. DATA: Mock the YouTube data structure initially (Title, VideoID, Thumbnail, Description).",
+    "11. UNIVERSAL RULES: Follow the <UNIVERSAL GUIDELINES FOR MAIN AGENT> in the system prompt."
+  ],
+  "universal_guidelines": {
+    "do_not": [
+      "Do NOT use generic gradients like blue-to-purple without noise/texture.",
+      "Do NOT center text on heavy reading pages (course descriptions).",
+      "Do NOT use pure black (#000000) for cards; use #121212 or #18181b.",
+      "Do NOT forget empty states (No courses found, No progress yet)."
+    ],
+    "must_do": [
+      "MUST use 'data-testid' on all interactive elements.",
+      "MUST ensure adequate contrast ratio (4.5:1) for text.",
+      "MUST support keyboard navigation for all interactive elements.",
+      "MUST use lazy loading for YouTube iframes."
+    ]
+  }
+}
