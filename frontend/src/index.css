@@ -170,6 +170,11 @@ code {
 .delay-400 { animation-delay: 400ms; }
 .delay-500 { animation-delay: 500ms; }
 
+/* Hide Emergent badge */
+#emergent-badge {
+    display: none !important;
+}
+
 /* Certificate print styles */
 @media print {
     .no-print { display: none !important; }
