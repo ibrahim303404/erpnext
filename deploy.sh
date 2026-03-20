@@ -39,7 +39,7 @@ echo ""
 # ---- Step 1: System Update ----
 print_step "1/10 - Updating system packages..."
 apt update && apt upgrade -y
-apt install -y curl wget git build-essential software-properties-common \
+apt install -y curl wget git build-essential \
   ufw sudo nano htop unzip gnupg2 ca-certificates lsb-release
 
 # ---- Step 2: Create deploy user ----
