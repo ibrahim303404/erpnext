@@ -1,7 +1,6 @@
 from fastapi import FastAPI, APIRouter, HTTPException, Query
 from dotenv import load_dotenv
 from starlette.middleware.cors import CORSMiddleware
-from motor.motor_asyncio import AsyncIOMotorClient
 import os
 import logging
 from pathlib import Path
@@ -13,9 +12,24 @@ from datetime import datetime, timezone
 ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / '.env')
 
-mongo_url = os.environ['MONGO_URL']
-client = AsyncIOMotorClient(mongo_url)
-db = client[os.environ['DB_NAME']]
+mongo_url = os.environ.get('MONGO_URL', 'mongodb://localhost:27017')
+db_name = os.environ.get('DB_NAME', 'erpnext_arabic')
+
+# Try real MongoDB first, fall back to mongomock if unavailable
+_using_mongomock = False
+try:
+    from motor.motor_asyncio import AsyncIOMotorClient
+    import pymongo
+    _test_client = pymongo.MongoClient(mongo_url, serverSelectionTimeoutMS=2000)
+    _test_client.server_info()
+    _test_client.close()
+    client = AsyncIOMotorClient(mongo_url)
+    db = client[db_name]
+except Exception:
+    from mongomock_motor import AsyncMongoMockClient
+    client = AsyncMongoMockClient()
+    db = client[db_name]
+    _using_mongomock = True
 
 app = FastAPI()
 api_router = APIRouter(prefix="/api")
