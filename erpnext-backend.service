@@ -1,0 +1,16 @@
+[Unit]
+Description=ERPNext Arabic Learning Platform Backend
+After=network.target mongod.service
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/root/erpnext/backend
+Environment=PATH=/root/erpnext/backend/venv/bin:/usr/local/bin:/usr/bin
+ExecStart=/root/erpnext/backend/venv/bin/python3 -m uvicorn server:app --host 0.0.0.0 --port 8001
+ExecStartPost=/bin/bash -c 'sleep 3 && curl -s -X POST http://127.0.0.1:8001/api/seed > /dev/null 2>&1 || true'
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
